@@ -7,7 +7,7 @@
         Count the changes second half needs to become first half
 
         Time complexity: O(n)   //Time equivalent to input size
-        Space complexity: O(n)  //The equivalent to input size of chars 
+        Space complexity: O(n)  //The equivalent to input size of chars
 
 */
 
@@ -23,8 +23,10 @@ object Main {
         loop@ for (i in 0 until array.size / 2) {
             for (j in startIndexForSecondString until array.size) {
                 if (array[i] == array[j]) {
+                    // swap value to skip it in next iteration
                     array[startIndexForSecondString] =
                         array[j].also { array[j] = array[startIndexForSecondString] }
+                    //increase index to skip it in next iteration
                     startIndexForSecondString++
                     continue@loop
                 }
